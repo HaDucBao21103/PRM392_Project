@@ -1,0 +1,58 @@
+# -----------------------------
+# Visual Studio & .NET Core
+# -----------------------------
+
+# Các file cấu hình người dùng và tạm thời
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Các file tạo bởi Visual Studio
+.vs/
+.vscode/
+
+# Ignore build output directories
+bin/
+obj/
+
+
+# Thư mục build và kết quả biên dịch
+[Bb]in/
+[Oo]bj/
+Out/
+
+# Các file DLL, EXE, PDB, và các file tạm thời khác
+*.dll
+*.exe
+*.pdb
+*.cache
+*.mdb
+
+# -----------------------------
+# NuGet
+# -----------------------------
+# Các gói NuGet được phục vụ qua PackageReference nên không cần commit thư mục packages
+*.nupkg
+packages/
+.nuget/
+
+# -----------------------------
+# Các file hệ điều hành và khác
+# -----------------------------
+# Windows
+Thumbs.db
+ehthumbs.db
+
+# macOS
+.DS_Store
+
+# File log
+*.log
+
+# -----------------------------
+# Resharper
+# -----------------------------
+_ReSharper*/
+*.[Rr]e[Ss]harper
+.github/workflows/
