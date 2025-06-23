@@ -100,31 +100,8 @@ namespace Vaccine.API.Controllers
                     // Cập nhật trạng thái hóa đơn
                     invoice.Status = "Paid";
                     _unitOfWork.InvoiceRepository.Update(invoice);
-
-                    // Lấy danh sách vaccine từ InvoiceDetail
-                    //var invoiceDetails = _unitOfWork.InvoiceDetailRepository.Get(d => d.InvoiceId == invoice.InvoiceId);
-
-                    //foreach (var detail in invoiceDetails)
-                    //{
-                    //    var vaccineBatch = _unitOfWork.VaccineBatchDetailRepository
-                    //        .Get(vb => vb.VaccineId == detail.VaccineId)
-                    //        .OrderBy(vb => vb.BatchNumber)
-                    //        .FirstOrDefault();
-
-                    //    if (vaccineBatch == null || vaccineBatch.Quantity < detail.Quantity)
-                    //    {
-                    //        return BadRequest(new { message = $"Insufficient stock for vaccine ID {detail.VaccineId}" });
-                    //    }
-
-                    //    // Trừ số lượng vaccine trong kho
-                    //    vaccineBatch.Quantity -= detail.Quantity;
-                    //    _unitOfWork.VaccineBatchDetailRepository.Update(vaccineBatch);
-                    //}
-
                     _unitOfWork.Save();
 
-
-                    //return Redirect("http://localhost:3000/book/payment-result");
                     return Redirect($"http://localhost:3000/book/payment-result{queryParams}");
                 }
                 catch (Exception ex)

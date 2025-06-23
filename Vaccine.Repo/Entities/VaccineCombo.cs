@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text.Json.Serialization;
 
 namespace Vaccine.Repo.Entities;
 
@@ -18,8 +17,5 @@ public partial class VaccineCombo
 
     public virtual ICollection<InvoiceDetail> InvoiceDetails { get; set; } = new List<InvoiceDetail>();
 
-    public virtual ICollection<Vaccine> Vaccines { get; set; } = new List<Vaccine>();
-
     public virtual ICollection<VaccineComboDetail> VaccineComboDetails { get; set; } = new List<VaccineComboDetail>();
-
 }

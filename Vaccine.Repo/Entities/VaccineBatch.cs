@@ -15,9 +15,9 @@ public partial class VaccineBatch
 
     public string? Country { get; set; }
 
-    public string? Status { get; set; }
+    public int? Duration { get; set; }
 
-    public virtual ICollection<Appointment> Appointments { get; set; } = new List<Appointment>();
+    public string? Status { get; set; }
 
     public virtual ICollection<VaccineBatchDetail> VaccineBatchDetails { get; set; } = new List<VaccineBatchDetail>();
 }

@@ -99,7 +99,6 @@ namespace Vaccine.API.Controllers
             var feedback = _unitOfWork.FeedbackRepository.GetQueryable().Include(x => x.Customer)
                                                                         .Include(x => x.Appointment)
                                                                         .Include(x => x.Doctor)
-                                                                        .Include(x => x.Staff)
                                                                         .Where(x => x.ReviewId == id)
                                                                         .FirstOrDefault();
 
@@ -120,8 +119,6 @@ namespace Vaccine.API.Controllers
             var feedback = _unitOfWork.FeedbackRepository.GetQueryable().Include(x => x.Customer)
                                                                        .Include(x => x.Appointment)
                                                                        .Include(x => x.Doctor)
-                                                                       .Include(x => x.Staff)
-                                                                       .Include(x => x.Vaccine)
                                                                        .ToList();
 
             if (feedback.Count == 0)

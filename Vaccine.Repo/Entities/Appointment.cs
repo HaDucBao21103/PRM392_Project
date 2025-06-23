@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text.Json.Serialization;
 
 namespace Vaccine.Repo.Entities;
 
@@ -30,10 +29,6 @@ public partial class Appointment
 
     public DateTime? CreatedAt { get; set; }
 
-    public string? BatchNumber { get; set; }
-
-    public virtual VaccineBatch? BatchNumberNavigation { get; set; }
-
     public virtual Child Child { get; set; } = null!;
 
     public virtual VaccineCombo? Combo { get; set; }
@@ -49,6 +44,6 @@ public partial class Appointment
     public virtual ICollection<InvoiceDetail> InvoiceDetails { get; set; } = new List<InvoiceDetail>();
 
     public virtual Staff? Staff { get; set; }
-    
+
     public virtual Vaccine? Vaccine { get; set; }
 }

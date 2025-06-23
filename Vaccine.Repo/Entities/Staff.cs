@@ -25,11 +25,7 @@ public partial class Staff
 
     public string? Status { get; set; }
 
-    public string? Degree { get; set; }
-
-    public int? ExperienceYears { get; set; }
     public virtual ICollection<Appointment> Appointments { get; set; } = new List<Appointment>();
 
     public virtual ICollection<HealthRecord> HealthRecords { get; set; } = new List<HealthRecord>();
-    public virtual ICollection<Feedback> Feedbacks { get; set; } = new List<Feedback>();
 }

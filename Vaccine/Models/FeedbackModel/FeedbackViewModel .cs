@@ -25,8 +25,6 @@ namespace Vaccine.API.Models.FeedbackModel
         {
             ReviewId = feedback.ReviewId;
             CustomerName = feedback.Customer?.Name;
-            StaffName = feedback.Staff?.Name;
-            VaccineName = feedback.Vaccine?.Name;
             DoctorName = feedback.Doctor?.Name;
             AppointmentId = feedback.AppointmentId;
             AppointmentDate = feedback.Appointment.AppointmentDate.ToString("dd/MM/yyyy");
