@@ -1,0 +1,38 @@
+version: '3.8'
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8089:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - JWT__Key=E4B433E34C2FAEE7D71A9A4FAD343C64F7A1F26B2CE9EAB0E1D5D8EEC2E2E0F5
+      - JWT__Issuer=YourIssuerHere
+      - JWT__Audience=YourAudienceHere
+      - ConnectionStrings__DefaultConnection=Server=sqlserver,1433;Database=VaccinationSystem;User Id=sa;Password=123@123Abc;Encrypt=False;TrustServerCertificate=True
+      - Google__ClientId=1006543489483-mrg7qa1pas18ulb0hvnadiagh8jajghs.apps.googleusercontent.com
+      - Google__ClientSecret=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
+      - Google__RedirectUri=https://localhost:7090/signin-google
+      - Vnpay__TmnCode=ESQS1XS0
+      - Vnpay__HashSecret=4FDHMWQQJWDV86ASSNS1RFY0EPJTYOA6
+      - Vnpay__BaseUrl=https://sandbox.vnpayment.vn/paymentv2/vpcpay.html
+      - Vnpay__CallbackUrl=https://localhost:7090/VnPay/Callback
+    depends_on:
+      - sqlserver
+    restart: unless-stopped
+
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: sqlserver
+    ports:
+      - "11434:1433"
+    environment:
+      SA_PASSWORD: "123@123Abc" 
+      ACCEPT_EULA: "Y"
+    volumes:
+      - sqlserver_data:/var/opt/mssql
+
+volumes:
+  sqlserver_data:
