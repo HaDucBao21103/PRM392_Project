@@ -11,7 +11,6 @@
 # Các file tạo bởi Visual Studio
 .vs/
 .vscode/
-appsettings.json
 appsettings.Development.json
 
 
